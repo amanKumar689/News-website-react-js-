@@ -1,0 +1,22 @@
+.description{
+
+padding:100px
+
+}
+header p{
+    font-size: 29px;
+    text-transform:capitalize;
+    padding-bottom:50px;
+}
+.desc{
+    padding:50px 50px 50px 50px;
+    
+    font-family:Lucida Bright ;
+ letter-spacing: 5px;
+ line-height: 1.8;
+}
+
+header img{
+    width:70%;
+    padding-left:10%;
+}

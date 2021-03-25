@@ -1,0 +1,10 @@
+.newsBody{
+    position: relative;
+    /* border:2px solid red; */
+    min-height: 900px;
+    background-color:   ;
+    /* z-index:-99; */
+ margin-left:270px;
+ margin-top:80px;
+grid-column:1/6 ;
+}
