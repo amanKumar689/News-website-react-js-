@@ -16,7 +16,7 @@ const ParentCard = (props) => {
  <Card.Text style={{margin:"10px 0px 20px 20px",fontFamily:"Elephant",color:"#575757" }}>
    { props.news!= undefined ? props.news.title : null }
  </Card.Text>
- <Link  style={{float:"right",marginBottom:"10px",textDecoration:"none",color:"#38a6f5",fontFamily:"Cooper"}}  to={`/${props.id}`} >Read more</Link>
+ <Link  style={{float:"right",marginBottom:"10px",textDecoration:"none",color:"#38a6f5",fontFamily:"Cooper"}}  to={`/?id=${props.id}`} >Read more</Link>
 </Card.Body>
 </Card>
         </section>

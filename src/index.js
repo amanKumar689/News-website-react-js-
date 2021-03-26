@@ -5,7 +5,6 @@ import { HeadlineData }from './API/newsApi'
 
 
   
-
 ReactDOM.render(
   <React.StrictMode>
    <NewsAPp/>

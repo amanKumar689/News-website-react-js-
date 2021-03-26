@@ -17,7 +17,7 @@ const ChildCard = (props) => {
 <Card.Text style={{margin:"10px 0px 20px 0px",fontFamily:"Elephant",color:"#575757" }}>
 { props.news!= undefined ? props.news.title : null }
 </Card.Text>
-<Link  style={{marginTop:"40px",display:"inline-block",textDecoration:"none",color:"#38a6f5",fontFamily:"Cooper"}} to={`/${props.id}`}>Read more</Link>
+<Link  style={{marginTop:"40px",display:"inline-block",textDecoration:"none",color:"#38a6f5",fontFamily:"Cooper"}} to={`/?id=${props.id}`}>Read more</Link>
 </Card.Body>
 
 <Card.Img variant="top" src={props!=null ?  props.news.urlToImage : null} style={{marginRight:"20px"}} />

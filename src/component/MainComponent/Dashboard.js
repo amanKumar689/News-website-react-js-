@@ -4,13 +4,12 @@ import Sidebar from '../subcomponent/Sidebar'
 import Newsbody from '../subcomponent/Newsbody'
 import '../../Style/dashboard.css'
 import {News_Order_by_cat ,HeadlineData} from '../../API/newsApi'
-import { useParams } from "react-router-dom"
-
-
+import { useLocation ,useHistory } from "react-router-dom"
 import Backdrop from '@material-ui/core/Backdrop';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
+import queryString from 'query-string'
 
 const useStyles = makeStyles((theme) => ({
   backdrop: {
@@ -21,8 +20,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Dashboard = () => {
   
-  const params = useParams();
-  
+  let params = useLocation();
+ params =  queryString.parse(params.search);
+  console.log(params)
   const [Headline,setHeadline] =useState();
   const [News,setNews] = useState();
     
@@ -37,9 +37,9 @@ const Dashboard = () => {
     setOpen(!open);
   };
    
-  
-  
-  
+  // AUTHENTICATION HANDLER
+
+ 
   
   const CategoryHandler=(e)=>{
 
@@ -60,22 +60,13 @@ const Dashboard = () => {
   News_Order_by_cat(e.target.id)
     .then(data=>
       {
+        let lightboxImgElem = document.getElementsByClassName('newsBody')[0].querySelectorAll("img");
+        lightboxImgElem.forEach((img)=>{img.src=""}) 
         setNews(data)
         
         
         window.scrollTo(0, 0)
-        let lightboxImgElem = document.getElementsByClassName('newsBody')[0].querySelectorAll("img");
-        lightboxImgElem.forEach((img)=>{img.sec=""}) 
-        
-          //    lightboxImgElem.onload = () =>{
-          //   console.log("loaded");
-         
-          // } 
-          handleClose()
-             
-          
-            
-            
+        handleClose()
           })
           .catch(err=>{ console.log(err) } )
           

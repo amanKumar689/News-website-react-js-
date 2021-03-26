@@ -35,7 +35,7 @@ const Headline = (props) => {
 
     return (
         <div className="headline">
-        <p>  <Link to={`/h${HeadlineId}`} style={{color:"black",textTransform:"capitalize",textDecoration:"none"}}>    {CurrentHeadline}  </Link></p> 
+        <p>  <Link to={`/?id=h${HeadlineId}`} style={{color:"black",textTransform:"capitalize",textDecoration:"none"}}>    {CurrentHeadline}  </Link></p> 
            <button onClick={()=>{Change()}}> 
             <FontAwesomeIcon  className="next" icon={faAngleDoubleRight} />
            </button>
