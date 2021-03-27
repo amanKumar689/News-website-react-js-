@@ -1,7 +1,6 @@
 import React from 'react'
 import '../../Style/description.css'
 const Description = (props) => {
-    console.log("DESCRIPTION:",props);
     window.scrollTo(0, 0)
     return (
         

@@ -22,7 +22,6 @@ const Dashboard = () => {
   
   let params = useLocation();
  params =  queryString.parse(params.search);
-  console.log(params)
   const [Headline,setHeadline] =useState();
   const [News,setNews] = useState();
     

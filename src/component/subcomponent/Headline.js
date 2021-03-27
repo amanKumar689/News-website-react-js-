@@ -8,8 +8,6 @@ import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 const Headline = (props) => {
 
 
-    console.log("Headline",props);
-
     const [CurrentHeadline,setHeadline] =useState('Loading......')
     const [HeadlineId,setHeadlineId] = useState(0)
     useEffect(()=>{

@@ -6,9 +6,6 @@ const Sidebar = (props) => {
     const params = useParams()
 
 
-
-    console.log("PARAMAS",params);
-
     const RouteHandler =(e)=>{
 
         props.CategoryHandler(e)

@@ -64,11 +64,9 @@ const Header = () => {
 
 IsAuthentication().then(result=>{
 
-     console.log("AUTHENTICATED SUCCeSSFUL",IsAuth);
      setAuth(true)
     }).catch(err=>{
         setAuth(false)
-        console.log("unsuccess");
     })
 
 

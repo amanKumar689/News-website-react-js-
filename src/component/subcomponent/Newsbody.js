@@ -13,7 +13,6 @@ const Newsbody = (props) => {
   
   const exp = new RegExp(/h\d/,'i')
   const Result = props.id && exp.exec(props.id)!=undefined  && exp.exec(props.id).input.slice(1)
-  console.log("Result:",Result,props.id);
   //  {/* I have to Re render all the stuff when We get Some params */}
   // console.log("NEWS:", props.news &&  props.news.articles[0]);
  const element = !props.id
