@@ -1,3 +1,11 @@
+/* ::-webkit-scrollbar{
+    width:10px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+} */
+
 .sidebar{
     margin-top:80px;
 padding:50px 20px 20px 30px ;
@@ -5,10 +13,11 @@ background-color: #f7f7f7;
 height:calc(100vh - 80px);
 position: fixed;
 min-width:270px;
-
+overflow: auto;
 }
 .sidebar > ul{
 list-style: none;
+height:400px;
 
 }
 .sidebar > ul li {
