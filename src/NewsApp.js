@@ -6,6 +6,9 @@ import Signup from './component/MainComponent/Signup'
 import Dashboard from './component/MainComponent/Dashboard'
 import {IsAuthentication} from './firebase/config'
 import RouteWrapper from './component/RouteWrapper/RouteWrapper' 
+    
+
+
 const NewsApp = () => {
     const [IsAuth,setAuth] = useState(null)
     

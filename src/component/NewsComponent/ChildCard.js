@@ -11,7 +11,7 @@ const ChildCard = (props) => {
         <section className="child">
     {/* Here We will look card of some news */}
 
-    <Card style={{ width: '80%',height:"200px",padding:"20px 20px 0px 40px",display:"flex",justifyContent:"space-between" }} className="ChildCard" >
+    <Card  className="childCard" >
    
 <Card.Body>
 <Card.Text style={{margin:"10px 0px 20px 0px",fontFamily:"Elephant",color:"#575757" }}>

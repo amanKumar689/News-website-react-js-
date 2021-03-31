@@ -1,10 +1,41 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserTie } from '@fortawesome/free-solid-svg-icons'
 import {IsAuthentication} from '../../firebase/config'
 import {Link} from 'react-router-dom'
-const Header = () => {
+import '../../Style/header.css'
+import menu from '../../menu1.svg'
 
+
+const Check = () =>{
+     
+
+   if(window.innerWidth <=900)
+   
+   {
+        if(document.getElementsByClassName('sidebar')[0]!=undefined)
+        {
+            document.getElementsByClassName('sidebar')[0].classList.add('disappear')
+            document.getElementsByClassName('sidebar')[0].classList.remove('appear')
+            document.getElementsByClassName('menu')[0].classList.add('appear')
+            document.getElementsByClassName('menu')[0].classList.remove('disappear')
+            document.getElementsByClassName('sidebar')[0].style.zIndex=999
+           } 
+   
+   }
+   
+   else{
+   
+   document.getElementsByClassName('menu')[0].classList.remove('appear')
+   document.getElementsByClassName('menu')[0].classList.add('disappear')
+   document.getElementsByClassName('sidebar')[0].classList.add('appear')
+   document.getElementsByClassName('sidebar')[0].classList.remove('disappear')
+   }
+   
+   }
+
+const Header = () => {
+ 
     const style ={
   
           header :{
@@ -24,34 +55,6 @@ const Header = () => {
        marginLeft:"40px"
        }
        ,
-       newsHeader:{
-        textAlign: "center",
-        height: "80px",
-        gridColumn: "1/6",
-        gridRow: "1",
-        backgroundColor: "#3d3d3d",
-       position: "fixed",
-       width: "100%",
-       zIndex:"3"
-       
-       }     
-           ,
-           logoutHandler:{
-              display:"flex",
-               flexWrap:"wrap",
-               alignItems:"flex-start",
-               justifyContent:"flex-end",
-               fontWeight:"bold",
-               letterSpacing:"2px",
-               position:"absolute",
-               right:"50px",
-               top:"20px",
-             textAlign:"right",
-             color:"white !important",
-             textDecoration:"none",
-             lineHeight:"2"
-            }
-            ,
             Link:{
                color:"white",textDecoration:"none"
             }
@@ -69,16 +72,36 @@ IsAuthentication().then(result=>{
         setAuth(false)
     })
 
+     useEffect(() => {
+  
+      Check();
+      console.log("inside Useeffect");
+       
+              document.getElementsByClassName('menu')[0].addEventListener('click',()=>{
+            document.getElementsByClassName('sidebar')[0].classList.toggle('disappear')
+            document.getElementsByClassName('sidebar')[0].classList.toggle('appear')
+            console.log('Click ')
+            
+         },false)
+         window.onresize =()=>{
+            Check()
+        }
+         return ()=>{console.log("Unmount");}
+     
+     }, [])
+   
+
 
     return (
        <>
-        <div style={style.newsHeader}>
-        <span style={style.header}>  News Time  </span>
-     { IsAuth!=null &&  !IsAuth  && <div className="AuthHandler"  style={{display:"inline-block",color:"white",position:"absolute",right:"160px",marginTop:"23px",fontSize:"19px",fontWeight:"bold"}}>
+        <div  className="newsHeader">
+     <div className="menu" >   <img src={menu}  alt="menu"/></div> 
+        <span >  News Time  </span>
+     { IsAuth!=null &&  !IsAuth  && <div className="AuthHandler">
          <span style={{display:"inline-block",marginRight:"30px"}}> <Link to='/signup' style={style.Link}>   Sign Up </Link> </span>
          <span><Link to='/login' style={style.Link}>  Log In </Link></span>
         </div> }
-        { IsAuth && ( <div style={style.logoutHandler}><Link style={style.Link} to='/logout'> Sign out </Link>  <FontAwesomeIcon icon={faUserTie}  style={style.icon}/> </div>)}
+        { IsAuth && ( <div className="logoutHandler"> <Link style={style.Link} to='/logout'> Sign out </Link>  <FontAwesomeIcon icon={faUserTie}  style={style.icon}/> </div>)}
         </div>
     </>)
 }

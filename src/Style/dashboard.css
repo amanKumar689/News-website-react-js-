@@ -10,3 +10,7 @@
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 80px 1fr;
 }
+::selection {
+  color:white ;
+  background-color: black;
+}

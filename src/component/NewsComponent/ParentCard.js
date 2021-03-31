@@ -9,7 +9,7 @@ const ParentCard = (props) => {
     return (
         <section className="parent"> 
         {/* This is a card */}
-        <Card style={{ width: '90%' }}>
+        <Card style={{ width: '90%' }} className="parentCard">
 <Card.Img variant="top" src={props.news && props.news.urlToImage }  />
 <Card.Body>
 
