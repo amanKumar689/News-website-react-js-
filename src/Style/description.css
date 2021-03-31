@@ -20,3 +20,23 @@ header img{
     width:70%;
     padding-left:10%;
 }
+@media screen and (max-width:600px)
+{
+    .description{
+        padding:30px;
+    }
+    .desc{
+
+    padding:50px 10px 50px 10px;
+    }
+    header img {
+        width:100%;
+        padding-left:1%;
+    }
+}
+@media screen and (max-width:900px)
+{
+    header img{
+        width:90%
+    }
+}

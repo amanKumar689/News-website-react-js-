@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
   },
  
    form:{
-  
-     border:"2px solid red",
+     
+    boxShadow:"1px 0px 6px 0px darkgrey",
      margin:"auto",
      marginTop:"80px",
      width:"500px",

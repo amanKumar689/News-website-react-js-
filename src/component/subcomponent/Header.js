@@ -24,7 +24,7 @@ const Check = () =>{
    
    }
    
-   else{
+   else if(document.getElementsByClassName('menu')[0]!=undefined){
    
    document.getElementsByClassName('menu')[0].classList.remove('appear')
    document.getElementsByClassName('menu')[0].classList.add('disappear')
@@ -75,18 +75,15 @@ IsAuthentication().then(result=>{
      useEffect(() => {
   
       Check();
-      console.log("inside Useeffect");
-       
               document.getElementsByClassName('menu')[0].addEventListener('click',()=>{
             document.getElementsByClassName('sidebar')[0].classList.toggle('disappear')
             document.getElementsByClassName('sidebar')[0].classList.toggle('appear')
-            console.log('Click ')
-            
+                      
          },false)
          window.onresize =()=>{
             Check()
         }
-         return ()=>{console.log("Unmount");}
+        
      
      }, [])
    

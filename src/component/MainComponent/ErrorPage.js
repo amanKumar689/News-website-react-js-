@@ -6,7 +6,10 @@ const ErrorPage = () => {
     console.log("ID:",id);
     return (
         <div>
-            Error Page Hai mere sot
+          <h1>  
+          
+            Error Page 404
+          </h1>
         </div>
     )
 }

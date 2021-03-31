@@ -14,3 +14,13 @@
   color:white ;
   background-color: black;
 }
+
+@media screen and (max-width:600px)
+{
+  
+form{
+  margin:30px;
+  width:90% !important;
+  padding: 20px  !important;
+}
+}

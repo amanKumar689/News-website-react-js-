@@ -1,6 +1,5 @@
 
 import firebase from 'firebase'
-console.log("running")
 var firebaseConfig = {
     apiKey: "AIzaSyBf6Z1R_M_QZGqF7JGX5DLDOZrqJCKDgxA",
     authDomain: "authentication-a8d00.firebaseapp.com",
